@@ -36,7 +36,7 @@ function createAxes(g, xAxis, yAxis, height, width) {
 
   // Y Axis Label
     g.append("text")
-        .attr("transform", "rotate(-90)") // attention, ca change aussi les orientations 
+        .attr("transform", "rotate(-90)")
         .attr("y", width * 0.02)
         .attr("x", - height * 0.1)
         .style("text-anchor", "middle")
@@ -44,9 +44,9 @@ function createAxes(g, xAxis, yAxis, height, width) {
 }
 
 /**
- * Renseigne la position et le rayon de chaque cercle.
+ * The position and the radius of each circle.
  * 
- * @param circles Les cercles.
+ * @param circles The circles.
  * @param x       Scale for the X axis.
  * @param y       Scale for the Y axis.
  * @param r       Scale for the circles' radii.
@@ -59,7 +59,7 @@ function placeCircles(circles, x, y, r) {
 
 
 /**
- * Crée le graphique à bulles.
+ * Creates the bubble chart.
  *
  * @param g       The SVG group in which the bubble chart will be drawn.
  * @param data    Data to use.
