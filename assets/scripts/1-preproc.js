@@ -13,10 +13,11 @@
  */
 function initializeData(data) {
   // TODO: Convert the properties "income", "lifeExpectancy" and "population" to the "number" type for each entry.
-  data.forEach(element => {
-    element.income = parseFloat(element.income)
-    element.lifeExpectancy = parseFloat(element.lifeExpectancy)
-    element.population = parseInt(element.population, 10)
+
+  data.forEach(row => {
+    row.income = parseFloat(row.income)
+    row.lifeExpectancy = parseFloat(row.lifeExpectancy)
+    row.population = parseInt(row.population, 10)
   });
 }
 
@@ -48,8 +49,7 @@ function domainY(y) {
  */
 function domainColor(color, data) {
   // TODO: Precise the scale domain for the color. Make sure that each world region has a distinct value and no color is reused.
-  var listZone = Array.from(new Set(data.map(lieu => lieu.zone))) 
-  color.domain(listZone)
+  color.domain(Array.from(new Set(data.map(val => val.zone))) )
 }
 
 /**
@@ -60,8 +60,5 @@ function domainColor(color, data) {
  */
 function domainRadius(r, data) {
   // TODO: Set the domain scale of the variable "r" by specifying the value extremas of the population (minimum and maximum).
-  var maxPop = d3.max(data.map(elem => elem.population))
-  var minPop = d3.min(data.map(elem => elem.population))
-
-  r.domain([minPop, maxPop])
+  r.domain([d3.min(data.map(row => row.population)), d3.max(data.map(row => row.population))])
 }
