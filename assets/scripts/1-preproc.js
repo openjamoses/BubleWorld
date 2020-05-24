@@ -13,7 +13,6 @@
  */
 function initializeData(data) {
   // TODO: Convert the properties "income", "lifeExpectancy" and "population" to the "number" type for each entry.
-
   data.forEach(row => {
     row.income = parseFloat(row.income)
     row.lifeExpectancy = parseFloat(row.lifeExpectancy)

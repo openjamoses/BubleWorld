@@ -9,7 +9,7 @@
  * Creates the bubble graph axis.
  *
  * @param g       The SVG group in which the bubble chart will be drawn.
- * @param xAxis   The X axis. 
+ * @param xAxis   The X axis.
  * @param yAxis   The Y axis.
  * @param height  The graphic's height.
  * @param width   The graphic's width.
@@ -22,7 +22,7 @@ function createAxes(g, xAxis, yAxis, height, width) {
     .attr("transform", "translate(0," + height + ")")
     .call(xAxis)
 
-  // Vertical Axis 
+  // Vertical Axis
     g.append("g")
     .attr("class", "y axis")
     .call(yAxis)
@@ -36,17 +36,17 @@ function createAxes(g, xAxis, yAxis, height, width) {
 
   // Y Axis Label
     g.append("text")
-        .attr("transform", "rotate(-90)")
-        .attr("y", width * 0.02)
-        .attr("x", - height * 0.1)
+        .attr("transform", "rotate(-90)") // attention, ca change aussi les orientations
+        .attr("y", width*0.02)
+        .attr("x",-height*0.1)
         .style("text-anchor", "middle")
         .text("Revenu (USD)")
 }
 
 /**
- * The position and the radius of each circle.
- * 
- * @param circles The circles.
+ * Renseigne la position et le rayon de chaque cercle.
+ *
+ * @param circles Les cercles.
  * @param x       Scale for the X axis.
  * @param y       Scale for the Y axis.
  * @param r       Scale for the circles' radii.
@@ -59,7 +59,7 @@ function placeCircles(circles, x, y, r) {
 
 
 /**
- * Creates the bubble chart.
+ * Crée le graphique à bulles.
  *
  * @param g       The SVG group in which the bubble chart will be drawn.
  * @param data    Data to use.

@@ -6,7 +6,7 @@
 
 
 /**
- * 
+ *
  * Allows the highlight the country that was selected via the search bar.
  *
  * @param countrySelected     Name of the selected country.
@@ -17,8 +17,7 @@ function search(countrySelected, g) {
        - Highlight the selected country by coloring its circle in black and by setting its opacity to 100%.
        - Set the opacity to 15% for the circles associated to the other countries (different than "countrySelected").
    */
-  g.selectAll("circle")
-   .attr("class", d => d.name === countrySelected ? "selected" : "hide") 
+  g.selectAll("circle").attr("class", d => d.name === countrySelected ? "selected" : "hide")
 }
 
 /**

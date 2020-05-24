@@ -20,9 +20,8 @@ function transition(g, data, x, y, r) {
        - Update the circles radiuses.
        - Transition has to complete in 1 second.
    */
-  placeCircles(g.selectAll("circle") 
+  placeCircles(g.selectAll("circle")
     .data(data)
-    .transition()
-    .duration(1000), x, y, r)
+    .transition().duration(1000), x, y, r)
 
 }
